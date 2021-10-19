@@ -4,8 +4,7 @@ package za.ac.cput.entity;
 //Entity class for Subject
 //10/10/21
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -13,9 +12,15 @@ import java.util.Objects;
 public class Subject implements Serializable
 {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Column(name = "subID",nullable = false,unique = true,length =10)
     private String subjectId;
+    @Column(name = "subName",nullable = false,unique = true,length =40)
     private String subjectName;
+    @Column(name = "subCredits",nullable = false,unique = true,length =10)
     private String subjectCredits;
+    @Column(name = "lecID",nullable = false,unique = true,length =10)
     private String lectureId;
 
 
@@ -40,11 +45,28 @@ public class Subject implements Serializable
                 '}';
     }
 
+    public String getSubjectId() {
+        return subjectId;
+    }
+
+    public String getSubjectName() {
+        return subjectName;
+    }
+
+    public String getSubjectCredits() {
+        return subjectCredits;
+    }
+
+    public String getLectureId() {
+        return lectureId;
+    }
+
     public static class Builder{
         private String subjectId;
         private String subjectName;
         private String subjectCredits;
         private String lectureId;
+
 
 
         public Builder setSubjectId(String subjectId) {
