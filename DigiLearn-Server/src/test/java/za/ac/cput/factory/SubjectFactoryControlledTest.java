@@ -7,7 +7,7 @@ package za.ac.cput.factory;
 import org.junit.jupiter.api.Test;
 import za.ac.cput.entity.Subject;
 
-class SubjectFactoryTest {
+class SubjectFactoryControlledTest {
 
     @Test
     void createSubject() {

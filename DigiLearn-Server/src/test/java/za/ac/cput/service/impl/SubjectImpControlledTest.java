@@ -19,7 +19,7 @@ import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SubjectImpTest {
+class SubjectImpControlledTest {
 
     @Autowired
     private static SubjectService service ;
