@@ -13,6 +13,8 @@ import za.ac.cput.service.SubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping ("/subject")
@@ -22,11 +24,9 @@ public class SubjectController {
     private SubjectService subjectService;
 
     @PostMapping("/create")
-    public Subject create(@RequestBody Subject subject){ Subject newSubject
-            = SubjectFactory
-            .createSubject("Business Practice","36");
+    public Subject create(@RequestBody Subject subject){
 
-        return subjectService.create(newSubject);
+        return subjectService.create(subject);
     }
 
     @GetMapping("/read/{id}")
@@ -42,5 +42,11 @@ public class SubjectController {
     @DeleteMapping("/delete/{id}")
     public boolean delete(@PathVariable String id){
         return subjectService.delete(id);
+    }
+
+    @GetMapping("/getall")
+    public List<Subject> getAll()
+    {
+        return subjectService.findAll();
     }
 }

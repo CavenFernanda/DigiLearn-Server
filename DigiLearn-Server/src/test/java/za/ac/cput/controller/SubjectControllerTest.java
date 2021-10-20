@@ -12,17 +12,17 @@ import za.ac.cput.factory.SubjectFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 class SubjectControllerTest {
 
     private static
     Subject subject = SubjectFactory.createSubject("App Dev","45");
-     public static String SECURITY_USERNAME = "user";
-    public static String SECURITY_PASSWORD = "USER123";
+//     public static String SECURITY_USERNAME = "admin";
+//    public static String SECURITY_PASSWORD = "admin123";
 
     @Autowired
     private TestRestTemplate restTemplate;
-    private final String baseURL = "http://localhost:3306/subject";
+    private final String baseURL = "http://localhost:8080/subject";
 
     @org.junit.jupiter.api.Test
     void create() {
@@ -67,7 +67,7 @@ class SubjectControllerTest {
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<String> entity = new HttpEntity<>(null,headers);
         ResponseEntity<String> response = restTemplate
-                .withBasicAuth(SECURITY_USERNAME,SECURITY_PASSWORD)
+
                 .exchange(url, HttpMethod.GET,entity,String.class);
 
         System.out.println("SHow All: ");
