@@ -8,7 +8,8 @@ import za.ac.cput.entity.Subject;
 
 import za.ac.cput.factory.SubjectFactory;
 
-import za.ac.cput.service.impl.SubjectImp;
+import za.ac.cput.service.SubjectService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 public class SubjectController {
 
     @Autowired
-    private SubjectImp subjectService;
+    private SubjectService subjectService;
 
     @PostMapping("/create")
     public Subject create(@RequestBody Subject subject){ Subject newSubject
