@@ -1,3 +1,4 @@
+//  Author: Ridhaa Flanders - 218204191
 package za.ac.cput.entity;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -8,7 +9,7 @@ import javax.persistence.*;
 public class Lecturer {
     @Id
     private String id;
-    private String firstName, lastName, lecturerEmail;
+    private String firstName, lastName, lecturerEmail, password;
 
     protected Lecturer(){}
 
@@ -16,11 +17,12 @@ public class Lecturer {
         this.firstName = builder.firstName;
         this.lastName = builder.lastName;
         this.lecturerEmail = builder.lecturerEmail;
+        this.password = builder.password;
         this.id = builder.id;
     }
 
     public static class Builder {
-        private String firstName, lastName, lecturerEmail;
+        private String firstName, lastName, lecturerEmail, password;
         private String id;
 
         public Builder firstName(String firstName) {
@@ -40,6 +42,12 @@ public class Lecturer {
 
         public Builder id(String id) {
             this.id = id;
+            return this;
+        }
+
+        public Builder password(String password)
+        {
+            this.password = password;
             return this;
         }
 
@@ -72,5 +80,9 @@ public class Lecturer {
 
     public String getLecturerEmail() {
         return lecturerEmail;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }

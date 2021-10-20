@@ -1,6 +1,11 @@
+//  Author: Ridhaa Flanders - 218204191
 package za.ac.cput.entity;
 
+import javax.persistence.*;
+@Entity
+@Table(name = "marks")
 public class Marks {
+    @Id
     private String id;
     private String mark,student,lecturer;
 
