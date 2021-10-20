@@ -3,38 +3,50 @@ package za.ac.cput.entity;
  *Author: Athi Fukama 218328591
  * Entity class for Exam
  */
+/*
+ *Author: Athi Fukama 218328591
+ * Entity class for Exam
+ */
+/*
+ *Author: Athi Fukama 218328591
+ * Entity class for Exam
+ */
 
-import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class Exam implements Serializable
+@Entity
+@Table(name = "exam")
+public class Exam
 {
-
-    private String examId;
+    @Id
+    private String id;
     private String lecturerId;
     private String examInfo;
 
 
     protected Exam(){
-}
+    }
 
     private Exam(Exam.Builder builder){
-    this.examId = builder.examId;
-    this.lecturerId = builder.lecturerId;
-    this.examInfo = builder.examInfo;
+        this.id = builder.id;
+        this.lecturerId = builder.lecturerId;
+        this.examInfo = builder.examInfo;
 
-}
+    }
 
     @Override
     public String toString() {
         return "Exam{" +
-                "examId='" + examId + '\'' +
+                "Id='" + id + '\'' +
                 ", lecturerId='" + lecturerId + '\'' +
                 ", examInfo='" + examInfo + '\'' +
                 '}';
     }
 
-    public String getExamId() {
-        return examId;
+    public String getId() {
+        return id;
     }
 
     public String getLecturerId() {
@@ -45,15 +57,14 @@ public class Exam implements Serializable
         return examInfo;
     }
 
-
     public static class Builder{
-        private String examId;
+        private String id;
         private String lecturerId;
         private String examInfo;
 
 
         public Builder setExamId(String examId) {
-            this.examId = examId;
+            this.id = id;
             return this;
         }
 
@@ -72,7 +83,7 @@ public class Exam implements Serializable
         }
 
         public Builder copy(Exam exam){
-            this.examId= exam.examId;
+            this.id= exam.id;
             this.lecturerId = exam.lecturerId;
             this.examInfo = exam.examInfo;
             return this;

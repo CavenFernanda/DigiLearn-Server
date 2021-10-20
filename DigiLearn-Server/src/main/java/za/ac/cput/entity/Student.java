@@ -3,10 +3,20 @@ package za.ac.cput.entity;
  *Author: Athi Fukama 218328591
  * Entity class for Student
  */
+/*
+ *Author: Athi Fukama 218328591
+ * Entity class for Student
+ */
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
-public class Student implements Serializable{
+@Entity
+@Table(name = "student")
+public class Student{
 
-    private String studentId;
+    @Id
+    private String id;
     private String firstName;
     private String lastName;
     private String studentEmail;
@@ -17,7 +27,7 @@ public class Student implements Serializable{
     }
 
     private Student(Student.Builder builder){
-        this.studentId = builder.studentId;
+        this.id = builder.id;
         this.firstName= builder.firstName;
         this.lastName = builder.lastName;
         this.studentEmail = builder.studentEmail;
@@ -28,7 +38,7 @@ public class Student implements Serializable{
     @Override
     public String toString() {
         return "Student{" +
-                "studentId='" + studentId + '\'' +
+                "id='" + id + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", studentEmail='" + studentEmail + '\'' +
@@ -36,8 +46,8 @@ public class Student implements Serializable{
                 '}';
     }
 
-    public String getStudentId() {
-        return studentId;
+    public String getId() {
+        return id;
     }
 
     public String getFirstName() {
@@ -56,17 +66,15 @@ public class Student implements Serializable{
         return courseId;
     }
 
-
-
     public static class Builder{
-        private String studentId;
+        private String id;
         private String firstName;
         private String lastName;
         private String studentEmail;
         private String courseId;
 
-        public Student.Builder setStudentId(String studentId) {
-            this.studentId = studentId;
+        public Student.Builder setId(String id) {
+            this.id = id;
             return this;
         }
 
@@ -85,7 +93,7 @@ public class Student implements Serializable{
             return this;
         }
         public Student.Builder setCourseId(String courseId) {
-            this.studentId = studentId;
+            this.courseId = courseId;
             return this;
         }
 
@@ -95,14 +103,15 @@ public class Student implements Serializable{
         }
 
         public Student.Builder copy(Student student){
-            this.studentId = student.studentId;
+            this.id = student.id;
             this.firstName= student.firstName;
             this.lastName = student.lastName;
             this.studentEmail = student.studentEmail;
-            this.courseId = student.studentId;
+            this.courseId = student.courseId;
 
             return this;
         }
+
 
 
     }
