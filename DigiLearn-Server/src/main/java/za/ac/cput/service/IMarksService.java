@@ -7,5 +7,5 @@ import za.ac.cput.entity.Marks;
 
 import java.util.Set;
 @Service
-public interface IMarksService extends IService<Marks,String>{
+public interface IMarksService extends IService<Marks,Long>{
 }
