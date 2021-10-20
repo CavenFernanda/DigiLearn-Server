@@ -10,6 +10,6 @@ import java.util.Set;
 
 public interface ISubjectService extends IService <Subject,String> {
 
-    public Set<Subject> getAll();
+
 
 }
