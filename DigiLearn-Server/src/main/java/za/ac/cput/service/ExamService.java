@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Exam;
 import za.ac.cput.repository.ExamRepository;
 
-
 import java.util.List;
+
 @Service
 public class ExamService implements IExamService {
 
@@ -21,13 +21,12 @@ public class ExamService implements IExamService {
     }
 
     @Override
-    public Exam read(String id) {
-        return this.examRepository.getById(id);
-    }
+    public Exam read(String id) { return this.examRepository.getById(id);}
 
     @Override
     public Exam update(Exam s) {
-        if (this.examRepository.existsById(s.getId())) {
+        if(this.examRepository.existsById(s.getId()))
+        {
             return this.examRepository.save(s);
         }
         return null;
@@ -40,7 +39,8 @@ public class ExamService implements IExamService {
         else return true;
     }
 
-    public List<Exam> findAll() {
+    public List<Exam> findAll()
+    {
         return this.examRepository.findAll();
     }
 }
