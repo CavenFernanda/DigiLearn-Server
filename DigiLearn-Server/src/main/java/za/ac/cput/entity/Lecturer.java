@@ -8,7 +8,8 @@ import javax.persistence.*;
 @Table(name = "lecturer")
 public class Lecturer {
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String firstName, lastName, lecturerEmail, password;
 
     protected Lecturer(){}
@@ -23,7 +24,7 @@ public class Lecturer {
 
     public static class Builder {
         private String firstName, lastName, lecturerEmail, password;
-        private String id;
+        private Long id;
 
         public Builder firstName(String firstName) {
             this.firstName = firstName;
@@ -40,7 +41,7 @@ public class Lecturer {
             return this;
         }
 
-        public Builder id(String id) {
+        public Builder id(Long id) {
             this.id = id;
             return this;
         }
@@ -66,7 +67,7 @@ public class Lecturer {
                 '}';
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
@@ -85,4 +86,6 @@ public class Lecturer {
     public String getPassword() {
         return password;
     }
+
+
 }

@@ -16,17 +16,18 @@ public class LecturerController {
     @Autowired
     private LecturerService Lecturerservice;
 
+    @CrossOrigin
     @PostMapping("/create")
     public Lecturer create(@RequestBody Lecturer lecturer){ return Lecturerservice.create(lecturer);}
 
     @GetMapping("/read")
-    public Lecturer read(@PathVariable String id){return Lecturerservice.read(id);}
+    public Lecturer read(@PathVariable Long id){return Lecturerservice.read(id);}
 
     @PostMapping("/update")
     public Lecturer update(@RequestBody Lecturer lecturer){return Lecturerservice.update(lecturer);}
 
     @DeleteMapping("/delete/{id}")
-    public boolean delete(@PathVariable String id){return Lecturerservice.delete(id);}
+    public boolean delete(@PathVariable Long id){return Lecturerservice.delete(id);}
 
     @GetMapping("/getall")
     public List<Lecturer> getAll()

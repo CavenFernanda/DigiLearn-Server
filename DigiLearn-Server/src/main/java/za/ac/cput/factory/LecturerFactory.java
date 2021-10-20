@@ -7,13 +7,12 @@ import za.ac.cput.util.GenericHelper;
 public class LecturerFactory {
     public static Lecturer build(String firstName, String lastName, String email, String password)
     {
-        String id = GenericHelper.generateAnId();
         if(firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || !email.contains("@") || !email.contains(".")
-           || password.isEmpty())
+                || password.isEmpty())
         {
             return null;
         }
-        return new Lecturer.Builder().id(id).firstName(firstName).lastName(lastName).lecturerEmail(email)
+        return new Lecturer.Builder().firstName(firstName).lastName(lastName).lecturerEmail(email)
                 .password(password).build();
     }
 }

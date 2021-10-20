@@ -7,5 +7,5 @@ import za.ac.cput.entity.Subject;
 
 import java.util.Set;
 @Service
-public interface ILecturerService extends IService<Lecturer,String>{
+public interface ILecturerService extends IService<Lecturer,Long>{
 }
