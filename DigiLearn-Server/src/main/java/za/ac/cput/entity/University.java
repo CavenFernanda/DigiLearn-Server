@@ -1,5 +1,10 @@
 package za.ac.cput.entity;
 
+/*
+ *Author: Caven Fernanda 218074905
+ * Entity class for Student
+ */
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
