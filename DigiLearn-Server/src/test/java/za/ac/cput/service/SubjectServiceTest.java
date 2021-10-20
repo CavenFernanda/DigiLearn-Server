@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class SubjectServiceTest {
 
-    private static SubjectService subjectService = SubjectService.getService();
+    private static SubjectService subjectService;
     private static Subject Subject = SubjectFactory.createSubject("App Theory", "50");
 
     @Test
@@ -51,11 +51,11 @@ class SubjectServiceTest {
         boolean deleted = subjectService.delete(Subject.getSubjectId());
         assertTrue(deleted);
         System.out.println("Deleted: " + deleted);
-        d_getAll();
+        d_findAll();
     }
 
     @Test
-    void d_getAll() {
-        System.out.println(subjectService.getAll() + "\n");
+    void d_findAll() {
+        System.out.println(subjectService.findAll() + "\n");
     }
 }

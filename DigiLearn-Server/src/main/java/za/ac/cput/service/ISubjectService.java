@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Subject;
 
 import java.util.Set;
-@Service
+
 public interface ISubjectService extends IService <Subject,String> {
 
-    public Set<Subject> getAll();
+
 
 }
