@@ -4,37 +4,36 @@ package za.ac.cput.controller;
  * Controller class for Exam
  */
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.entity.Exam;
-import za.ac.cput.factory.ExamFactory;
 import za.ac.cput.service.ExamService;
 
+import java.util.List;
 
 @RestController
-public class ExamController { @Autowired
-private ExamService examService;
+@RequestMapping("/exam")
+public class ExamController {
+    @Autowired
+    private ExamService examService;
 
     @PostMapping("/create")
-    public Exam create(@RequestBody Exam exam){ Exam newExam
-            = ExamFactory
-            .createExam("001","Application Dev Question 1");
+    public Exam create(@RequestBody Exam exam){ return examService.create(exam);}
 
-        return examService.create(newExam);
-    }
+    @GetMapping("/read")
+    public Exam read(@PathVariable String id){return examService.read(id);}
 
-    @GetMapping("/read/{id}")
-    public Exam read(@PathVariable String id){
-        return examService.read(id);
-    }
-
-    @PostMapping ("/update")
-    public Exam update(@RequestBody Exam exam){
-        return examService.update(exam);
-    }
+    @PostMapping("/update")
+    public Exam update(@RequestBody Exam exam){return examService.update(exam);}
 
     @DeleteMapping("/delete/{id}")
-    public boolean delete(@PathVariable String id){
-        return examService.delete(id);
+    public boolean delete(@PathVariable String id){return examService.delete(id);}
+
+    @GetMapping("/getall")
+    public List<Exam> getAll()
+    {
+        return examService.findAll();
     }
+
 }
