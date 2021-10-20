@@ -1,4 +1,10 @@
 package za.ac.cput.service;
 
-public interface IExamService {
+import za.ac.cput.entity.Exam;
+
+
+import java.util.Set;
+
+public interface IExamService  extends IService <Exam, String> {
+    public Set<Exam> getAll();
 }

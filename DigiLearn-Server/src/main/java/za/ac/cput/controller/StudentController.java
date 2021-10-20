@@ -1,13 +1,14 @@
 package za.ac.cput.controller;
+/*
+ *Author: Athi Fukama 218328591
+ * Controller class for Student
+ */
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.entity.Student;
-import za.ac.cput.entity.Subject;
 import za.ac.cput.factory.StudentFactory;
-import za.ac.cput.factory.SubjectFactory;
 import za.ac.cput.service.StudentService;
-import za.ac.cput.service.SubjectService;
 
 @RestController
 @RequestMapping ("/student")
