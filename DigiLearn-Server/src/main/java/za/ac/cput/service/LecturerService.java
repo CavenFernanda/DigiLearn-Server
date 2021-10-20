@@ -1,11 +1,9 @@
-package za.ac.cput.service.impl;
+package za.ac.cput.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import za.ac.cput.entity.Lecturer;
+import za.ac.cput.factory.LecturerFactory;
 import za.ac.cput.repository.LecturerRepository;
-import za.ac.cput.repository.SubjectRepository;
-import za.ac.cput.service.ILecturerService;
-import za.ac.cput.service.SubjectService;
 
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -22,9 +20,7 @@ public class LecturerService implements ILecturerService {
     }
 
     @Override
-    public Lecturer read(String id) {
-        return this.LecturerRepository.findById(id).orElse(null);
-    }
+    public Lecturer read(String id) { return this.LecturerRepository.getById(id);}
 
     @Override
     public Lecturer update(Lecturer s) {
@@ -44,6 +40,7 @@ public class LecturerService implements ILecturerService {
 
     @Override
     public Set<Lecturer> getAll() {
-        return this.LecturerRepository.findAll().stream().collect(Collectors.toSet());
+        return this.LecturerRepository.getAll();
     }
+
 }

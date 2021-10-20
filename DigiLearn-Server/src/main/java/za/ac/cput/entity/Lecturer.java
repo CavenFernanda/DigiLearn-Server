@@ -1,9 +1,10 @@
 package za.ac.cput.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
+import javax.persistence.*;
 @Entity
+@Table(name = "lecturer")
 public class Lecturer {
     @Id
     private String id;

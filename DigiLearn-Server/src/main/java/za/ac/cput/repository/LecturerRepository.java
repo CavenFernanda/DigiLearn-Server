@@ -5,6 +5,9 @@ import org.springframework.stereotype.Repository;
 import za.ac.cput.entity.Lecturer;
 import za.ac.cput.entity.Subject;
 
+import java.util.Set;
+
 @Repository
 public interface LecturerRepository extends JpaRepository<Lecturer,String> {
+    public Set<Lecturer> getAll();
 }

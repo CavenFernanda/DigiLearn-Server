@@ -3,10 +3,7 @@ package za.ac.cput.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.entity.Lecturer;
-import za.ac.cput.entity.Subject;
-import za.ac.cput.factory.LecturerFactory;
-import za.ac.cput.factory.SubjectFactory;
-import za.ac.cput.service.impl.LecturerService;
+import za.ac.cput.service.LecturerService;
 import java.util.Set;
 
 @RestController
