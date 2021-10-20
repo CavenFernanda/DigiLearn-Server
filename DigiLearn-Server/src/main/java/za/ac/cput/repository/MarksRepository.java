@@ -8,5 +8,5 @@ import za.ac.cput.entity.Marks;
 
 import java.util.Set;
 @Repository
-public interface MarksRepository extends JpaRepository<Marks,String> {
+public interface MarksRepository extends JpaRepository<Marks,Long> {
 }
