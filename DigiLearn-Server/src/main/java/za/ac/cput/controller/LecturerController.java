@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.entity.Lecturer;
 import za.ac.cput.service.LecturerService;
+
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -27,6 +29,9 @@ public class LecturerController {
     public boolean delete(@PathVariable String id){return Lecturerservice.delete(id);}
 
     @GetMapping("/getall")
-    public Set<Lecturer> getAll(){return Lecturerservice.getAll();}
+    public List<Lecturer> getAll()
+    {
+        return Lecturerservice.findAll();
+    }
 
 }

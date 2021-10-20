@@ -2,13 +2,14 @@
 package za.ac.cput.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Lecturer;
 import za.ac.cput.factory.LecturerFactory;
 import za.ac.cput.repository.LecturerRepository;
 
+import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
-
+@Service
 public class LecturerService implements ILecturerService {
 
     private static LecturerService LecturerService = null;
@@ -39,9 +40,8 @@ public class LecturerService implements ILecturerService {
         else return true;
     }
 
-    @Override
-    public Set<Lecturer> getAll() {
-        return this.LecturerRepository.getAll();
+    public List<Lecturer> findAll()
+    {
+        return this.LecturerRepository.findAll();
     }
-
 }

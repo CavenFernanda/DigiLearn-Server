@@ -2,13 +2,15 @@
 package za.ac.cput.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Lecturer;
 import za.ac.cput.entity.Marks;
 import za.ac.cput.repository.LecturerRepository;
 import za.ac.cput.repository.MarksRepository;
 
+import java.util.List;
 import java.util.Set;
-
+@Service
 public class MarksService implements IMarksService{
     private static MarksService MarksService = null;
     @Autowired
@@ -40,8 +42,8 @@ public class MarksService implements IMarksService{
         else return true;
     }
 
-    @Override
-    public Set<Marks> getAll() {
-        return this.MarksRepository.getAll();
+    public List<Marks> findAll()
+    {
+        return MarksRepository.findAll();
     }
 }

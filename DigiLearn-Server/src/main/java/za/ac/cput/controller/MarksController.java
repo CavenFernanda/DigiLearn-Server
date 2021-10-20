@@ -7,6 +7,7 @@ import za.ac.cput.entity.Lecturer;
 import za.ac.cput.entity.Marks;
 import za.ac.cput.service.MarksService;
 
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -28,5 +29,8 @@ public class MarksController {
     public boolean delete(@PathVariable String id){return marksService.delete(id);}
 
     @GetMapping("/getall")
-    public Set<Marks> getAll(){return marksService.getAll();}
+    public List<Marks> getAll()
+    {
+        return marksService.findAll();
+    }
 }
