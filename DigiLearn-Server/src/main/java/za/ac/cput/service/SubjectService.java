@@ -1,11 +1,12 @@
 package za.ac.cput.service;
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Subject;
 import za.ac.cput.repository.SubjectRepository;
 import za.ac.cput.service.ISubjectService;
 
 import java.util.Set;
-
+@Service
 public class SubjectService implements ISubjectService
 {
     private static SubjectService subjectService = null;
