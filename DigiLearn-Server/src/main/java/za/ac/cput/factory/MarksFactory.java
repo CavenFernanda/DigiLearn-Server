@@ -8,11 +8,10 @@ import za.ac.cput.util.GenericHelper;
 public class MarksFactory {
     public static Marks build(String mark, String student, String lecturer)
     {
-        String id = GenericHelper.generateAnId();
         if(student.isEmpty() || lecturer.isEmpty())
         {
             return null;
         }
-        return new Marks.Builder().Id(id).Student(student).Mark(mark).Lecturer(lecturer).build();
+        return new Marks.Builder().Student(student).Mark(mark).Lecturer(lecturer).build();
     }
 }

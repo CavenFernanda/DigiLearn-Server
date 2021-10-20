@@ -22,7 +22,7 @@ public class MarksService implements IMarksService{
     }
 
     @Override
-    public Marks read(String id) {
+    public Marks read(Long id) {
         return this.MarksRepository.getById(id);
     }
 
@@ -36,7 +36,7 @@ public class MarksService implements IMarksService{
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(Long id) {
         this.MarksRepository.deleteById(id);
         if (this.MarksRepository.existsById(id)) return false;
         else return true;

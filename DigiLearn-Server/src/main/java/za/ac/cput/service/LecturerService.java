@@ -22,7 +22,7 @@ public class LecturerService implements ILecturerService {
     }
 
     @Override
-    public Lecturer read(String id) { return this.LecturerRepository.getById(id);}
+    public Lecturer read(Long id) { return this.LecturerRepository.getById(id);}
 
     @Override
     public Lecturer update(Lecturer s) {
@@ -34,7 +34,7 @@ public class LecturerService implements ILecturerService {
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(Long id) {
         this.LecturerRepository.deleteById(id);
         if (this.LecturerRepository.existsById(id)) return false;
         else return true;

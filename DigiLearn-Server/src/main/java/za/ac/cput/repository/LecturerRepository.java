@@ -9,5 +9,5 @@ import za.ac.cput.entity.Subject;
 import java.util.Set;
 
 @Repository
-public interface LecturerRepository extends JpaRepository<Lecturer,String> {
+public interface LecturerRepository extends JpaRepository<Lecturer,Long> {
 }

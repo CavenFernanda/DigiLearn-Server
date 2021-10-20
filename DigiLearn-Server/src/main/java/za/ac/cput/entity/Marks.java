@@ -6,24 +6,25 @@ import javax.persistence.*;
 @Table(name = "marks")
 public class Marks {
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String mark,student,lecturer;
 
     protected Marks(){}
 
     private Marks(Marks.Builder builder){
-        this.id = builder.id;
         this.mark = builder.mark;
         this.student = builder.student;
+        this.lecturer = builder.lecturer;
         this.id = builder.id;
     }
 
     public static class Builder
     {
-        private String id;
+        private Long id;
         private String mark,student,lecturer;
 
-        public Builder Id(String id) {
+        public Builder Id(Long id) {
             this.id = id;
             return this;
         }
@@ -48,7 +49,7 @@ public class Marks {
         }
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 

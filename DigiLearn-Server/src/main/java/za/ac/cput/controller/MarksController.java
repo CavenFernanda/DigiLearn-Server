@@ -20,13 +20,13 @@ public class MarksController {
     public Marks create(@RequestBody Marks marks){ return marksService.create(marks);}
 
     @GetMapping("/read")
-    public Marks read(@PathVariable String id){return marksService.read(id);}
+    public Marks read(@PathVariable Long id){return marksService.read(id);}
 
     @PostMapping("/update")
     public Marks update(@RequestBody Marks marks){return marksService.update(marks);}
 
     @DeleteMapping("/delete/{id}")
-    public boolean delete(@PathVariable String id){return marksService.delete(id);}
+    public boolean delete(@PathVariable Long id){return marksService.delete(id);}
 
     @GetMapping("/getall")
     public List<Marks> getAll()
