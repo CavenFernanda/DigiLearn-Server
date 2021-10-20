@@ -1,5 +1,10 @@
 package za.ac.cput.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "university")
 public class University {
 
     private String id;
