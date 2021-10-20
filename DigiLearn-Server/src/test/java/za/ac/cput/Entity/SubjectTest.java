@@ -48,12 +48,12 @@ class SubjectTest {
         assertEquals(subject1,subject3);
     }
 
-    @Test
-    void testTimeouts() {
-        assertTimeout(Duration.ofMillis(20), () -> {
-            Thread.sleep(1000);
-        });
-    }
+//    @Test
+//    void testTimeouts() {
+//        assertTimeout(Duration.ofMillis(20), () -> {
+//            Thread.sleep(1000);
+//        });
+//    }
 
     @Disabled
     @Test
